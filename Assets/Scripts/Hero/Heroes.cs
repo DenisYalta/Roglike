@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Heroes : Mobs
 {
-
     public float HealthRegen;
     public float MaxHealth;
     public float GettingDamageDelay;
@@ -15,11 +14,8 @@ public class Heroes : Mobs
     public Enemies EnemiesVariable;
     public HealthBar HealthbarVariable;
 
-   
     public InputAction WASD; // Movement
     public CharacterController Controller;
-
-
 
 
     private void OnEnable()
@@ -31,9 +27,9 @@ public class Heroes : Mobs
         WASD.Disable();
     }
 
+
     protected void Movement()
     {
-
         Vector2 InputVector = WASD.ReadValue<Vector2>();
         Vector3 FinalFector = new Vector3();
 
@@ -41,17 +37,17 @@ public class Heroes : Mobs
         FinalFector.z = InputVector.y;
 
         Controller.Move(FinalFector * Time.deltaTime * Speed);
-
     }
 
     public IEnumerator Regen()
     {
         yield return new WaitForSeconds(1f);
+
         if (CurrentHealth + HealthRegen > MaxHealth)
         {
             CurrentHealth = MaxHealth;
         }
-        else CurrentHealth = CurrentHealth + HealthRegen;
+        else CurrentHealth += HealthRegen;
 
         HealthbarVariable.SetHealthBar(CurrentHealth, MaxHealth);
         StopCoroutine("Regen");
@@ -60,11 +56,12 @@ public class Heroes : Mobs
 
     public IEnumerator HeroTakeDamage(float EnemyDamage)
     {
-        
+    
         if (IsEnemyHittingHero) 
          { 
             CurrentHealth -= EnemyDamage;
             HealthbarVariable.SetHealthBar(CurrentHealth, MaxHealth);
+
             if (CurrentHealth <= 0)
             {
                 IsEnemyHittingHero = false;
@@ -74,27 +71,27 @@ public class Heroes : Mobs
             yield return new WaitForSeconds(1f);
 
             StopCoroutine("HeroTakeDamage");
-            StartCoroutine(HeroTakeDamage(EnemiesVariable.Damage));
-          
+            StartCoroutine(HeroTakeDamage(EnemiesVariable.Damage));        
          }       
     }
 
 
     public void OnTriggerEnter (Collider collision)
     {
-        
+   
         if (collision.gameObject.CompareTag("Enemy"))
         {
             IsEnemyHittingHero = true;
-
             EnemiesVariable = collision.GetComponent<Enemies>();
             StartCoroutine (HeroTakeDamage(EnemiesVariable.Damage));
             StopCoroutine("HeroTakeDamage");
         }  
     }
 
+
     public void OnTriggerExit(Collider collision)
     {
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             IsEnemyHittingHero = false;
@@ -102,15 +99,12 @@ public class Heroes : Mobs
     }
 
 
-
-
-
     void Start()
     {
         GettingDamageDelay = 0.5f;
+        MaxHealth = CurrentHealth;
         IsEnemyHittingHero = false;
         Controller = GetComponent<CharacterController>();
-        MaxHealth = CurrentHealth;
         HealthbarVariable.SetMaxHealth(MaxHealth);
     }
 }

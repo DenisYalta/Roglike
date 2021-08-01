@@ -1020,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.7531023
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
@@ -1062,6 +1062,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989458, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8160475869750989460, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
       propertyPath: m_Name
@@ -1085,6 +1090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainHero
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179757129978342811, guid: f840ae9207dd97e4b895923e81d79840,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5179757129978342812, guid: f840ae9207dd97e4b895923e81d79840,
         type: 3}
@@ -1151,5 +1161,6 @@ PrefabInstance:
       propertyPath: HealthbarVariable
       value: 
       objectReference: {fileID: 774707210}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5179757129978342811, guid: f840ae9207dd97e4b895923e81d79840, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f840ae9207dd97e4b895923e81d79840, type: 3}

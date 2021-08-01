@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
+
 public class Enemies : Mobs
 {
     public float Damage;
@@ -8,17 +9,12 @@ public class Enemies : Mobs
 
     protected float DistanceForPlayer;
 
-  
     protected Transform EnemyTarget;
     protected NavMeshAgent EnemyAgent;
 
 
-
-
-
     protected void FollowPlayer()
     {
-
         DistanceForPlayer = Vector3.Distance(EnemyTarget.position, transform.position);
 
         if (DistanceForPlayer<= RadiusAttackPlayer)
@@ -30,8 +26,6 @@ public class Enemies : Mobs
         {
             FaceTarget();
         }
-
-
     }
 
 
@@ -43,12 +37,10 @@ public class Enemies : Mobs
     }
 
 
-
     protected void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, RadiusAttackPlayer);
-       
     }
 
 
@@ -57,8 +49,6 @@ public class Enemies : Mobs
         EnemyTarget = FirstHero.Instance.PlayerHero.transform;
         EnemyAgent = GetComponent<NavMeshAgent>();
     }
-
-
 }
 
 
