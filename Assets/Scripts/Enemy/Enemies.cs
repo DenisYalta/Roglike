@@ -9,7 +9,8 @@ public class Enemies : Mobs
 
     protected float DistanceForPlayer;
 
-    protected Transform EnemyTarget;
+    
+    public Transform EnemyTarget;
     protected NavMeshAgent EnemyAgent;
 
 
@@ -43,11 +44,23 @@ public class Enemies : Mobs
         Gizmos.DrawWireSphere(transform.position, RadiusAttackPlayer);
     }
 
-
-    private void Awake()
+    public void EnemyTakeDamage(float WeaponDamage)
     {
-        EnemyTarget = FirstHero.Instance.PlayerHero.transform;
-        EnemyAgent = GetComponent<NavMeshAgent>();
+        CurrentHealth -= WeaponDamage;
+        if (CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+
+    public void Awake()
+    {
+
+        // EnemyTarget = FirstHero.Instance.PlayerHero.transform;
+        
+         EnemyAgent = GetComponent<NavMeshAgent>();
     }
 }
 

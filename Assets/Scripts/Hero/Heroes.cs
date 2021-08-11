@@ -8,15 +8,16 @@ public class Heroes : Mobs
     public float HealthRegen;
     public float MaxHealth;
     public float GettingDamageDelay;
+    public float RotationSpeed;
 
-    public bool IsEnemyHittingHero;
+    protected bool IsEnemyHittingHero;
 
     public Enemies EnemiesVariable;
     public HealthBar HealthbarVariable;
 
     public InputAction WASD; // Movement
     public CharacterController Controller;
-
+    public Transform MainHero;
 
     private void OnEnable()
     {
@@ -37,6 +38,22 @@ public class Heroes : Mobs
         FinalFector.z = InputVector.y;
 
         Controller.Move(FinalFector * Time.deltaTime * Speed);
+    }
+
+    protected void HeroLookToMouse()
+    {
+        Plane PlayerPlane = new Plane(Vector3.up, transform.position);
+        Ray RayVariable = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        float HitDistance = 0.0f;
+
+        if (PlayerPlane.Raycast(RayVariable, out HitDistance))
+        {
+            Vector3 TargetPoint = RayVariable.GetPoint(HitDistance);
+            Quaternion TargetRotation = Quaternion.LookRotation(TargetPoint - transform.position);
+            TargetRotation.x = 0;
+            TargetRotation.z = 0;
+            transform.rotation = Quaternion.Slerp(transform.rotation, TargetRotation, RotationSpeed * Time.deltaTime);
+        }
     }
 
     public IEnumerator Regen()
@@ -76,13 +93,13 @@ public class Heroes : Mobs
     }
 
 
-    public void OnTriggerEnter (Collider collision)
+    public void OnTriggerEnter (Collider Collision)
     {
    
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (Collision.gameObject.CompareTag("Enemy"))
         {
             IsEnemyHittingHero = true;
-            EnemiesVariable = collision.GetComponent<Enemies>();
+            EnemiesVariable = Collision.GetComponent<Enemies>();
             StartCoroutine (HeroTakeDamage(EnemiesVariable.Damage));
             StopCoroutine("HeroTakeDamage");
         }  
@@ -107,4 +124,7 @@ public class Heroes : Mobs
         Controller = GetComponent<CharacterController>();
         HealthbarVariable.SetMaxHealth(MaxHealth);
     }
+
+   
+ 
 }

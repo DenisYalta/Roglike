@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5179757129978342810}
   - component: {fileID: 5179757129978342808}
   - component: {fileID: 5179757130859004053}
+  - component: {fileID: 63430481}
   m_Layer: 0
   m_Name: MainHero
   m_TagString: Player
@@ -30,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.16, y: -5.61, z: 8.341111}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 192524937}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -117,19 +119,19 @@ MonoBehaviour:
   HealthRegen: 1
   MaxHealth: 0
   GettingDamageDelay: 0
-  IsEnemyHittingHero: 0
+  RotationSpeed: 7
   EnemiesVariable: {fileID: 0}
   HealthbarVariable: {fileID: 0}
   WASD:
     m_Name: WASD
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: afe032a2-6587-4f68-b5af-2b3f72e85966
+    m_Id: 149f9f52-ea2e-4050-bece-e70ee975d060
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 2D Vector
-      m_Id: d4078399-9c71-4179-a6e5-2cfb06428183
+      m_Id: cb3efd0f-6086-4449-ad20-d3f743515db9
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -137,7 +139,7 @@ MonoBehaviour:
       m_Action: WASD
       m_Flags: 4
     - m_Name: up
-      m_Id: 7e79ae99-51b0-45bf-8bfa-2e06dc508356
+      m_Id: c8b6c4f4-088c-45ce-9e61-efbfcdb079e7
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
@@ -145,7 +147,7 @@ MonoBehaviour:
       m_Action: WASD
       m_Flags: 8
     - m_Name: down
-      m_Id: 8106ba7f-dfab-437e-aec3-c8d7ce3e8c24
+      m_Id: d0e5d54f-0c13-44d1-bc17-3d38147a9344
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
@@ -153,7 +155,7 @@ MonoBehaviour:
       m_Action: WASD
       m_Flags: 8
     - m_Name: left
-      m_Id: 292bfaf4-d98b-45ea-af0c-f4d1219b7ced
+      m_Id: afb5723b-1611-4767-b7aa-8b1e98ed14c3
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
@@ -161,7 +163,7 @@ MonoBehaviour:
       m_Action: WASD
       m_Flags: 8
     - m_Name: right
-      m_Id: a9c1c8c6-5ea7-4fef-b8a5-8ae71a6036fa
+      m_Id: f554e3bd-e245-4b59-ae18-adfe849e6edb
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
@@ -169,4 +171,144 @@ MonoBehaviour:
       m_Action: WASD
       m_Flags: 8
   Controller: {fileID: 5179757129978342808}
+  MainHero: {fileID: 5179757129978342812}
   PlayerHero: {fileID: 5179757129978342502}
+--- !u!114 &63430481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179757129978342502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: bda9a63184b224a429649729986138e2,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 292ca6ad-fa81-4fee-b07b-6a077c72f5ad
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f342ead-3218-404d-8138-b86094883d1f
+    m_ActionName: Player/Shoot[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!1001 &1154160643300343940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5179757129978342812}
+    m_Modifications:
+    - target: {fileID: 1154160642043408399, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160642043408399, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160642043408399, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160642043408399, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160642043408399, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.058
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.508
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154160643454988814, guid: 0022062fa07b41c4d8633c0fced56b9d,
+        type: 3}
+      propertyPath: m_Name
+      value: Pistol
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0022062fa07b41c4d8633c0fced56b9d, type: 3}
+--- !u!4 &192524937 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1154160643454988813, guid: 0022062fa07b41c4d8633c0fced56b9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1154160643300343940}
+  m_PrefabAsset: {fileID: 0}

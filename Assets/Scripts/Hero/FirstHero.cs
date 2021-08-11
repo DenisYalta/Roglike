@@ -16,11 +16,18 @@ public class FirstHero : Heroes
 
     void Update()
     {
-        Movement();
 
+        Movement();
         if (MaxHealth > CurrentHealth)
         {
             StartCoroutine ("Regen"); 
-        } 
+        }
+
+        HeroLookToMouse();
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 }
