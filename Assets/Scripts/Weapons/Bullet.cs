@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class Bullet : MonoBehaviour
  
         if (Collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Working collision");
+            
             HitEnemy = Collision.GetComponent<Enemies>();
             HitEnemy.EnemyTakeDamage(ShootingWeapon.Damage);
                 
