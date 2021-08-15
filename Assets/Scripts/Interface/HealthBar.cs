@@ -11,16 +11,9 @@ public class HealthBar : MonoBehaviour
     public Text HealthAmmountText;
 
 
-    public void SetMaxHealth(float HeroMaxHealth)
+    public void SetHealthBar(float HeroMaxHealth, float HeroCurrentHealth)
     {
         HealthSlider.maxValue = HeroMaxHealth;
-        HealthSlider.value = HeroMaxHealth;
-        HealthAmmountText.text = HeroMaxHealth.ToString() + "/" + HeroMaxHealth.ToString();
-    }
-
-
-    public void SetHealthBar(float HeroCurrentHealth, float HeroMaxHealth)
-    {
         HealthSlider.value = HeroCurrentHealth;
         HealthAmmountText.text = HeroCurrentHealth.ToString() + "/" + HeroMaxHealth.ToString();
     }

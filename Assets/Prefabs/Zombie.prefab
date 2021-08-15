@@ -150,6 +150,7 @@ MonoBehaviour:
   CurrentHealth: 10
   Speed: 1
   Damage: 10
+  Infection: 1
   RadiusAttackPlayer: 10
   EnemyTarget: {fileID: 5179757129978342812, guid: f840ae9207dd97e4b895923e81d79840,
     type: 3}

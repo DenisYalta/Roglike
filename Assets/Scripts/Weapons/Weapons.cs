@@ -10,6 +10,8 @@ public class Weapons : MonoBehaviour
     public float MaxBullets;
     public float CurrentBullets;
 
+    public bool IsReloading = false;
+
     public Transform Firepoint;
     public GameObject BulletPrefab;
 
@@ -24,12 +26,36 @@ public class Weapons : MonoBehaviour
         RogLikeInputActionsWeapons.Player.Shoot.performed += Shoot;
         RogLikeInputActionsWeapons.Player.Shoot.Enable();
 
+        RogLikeInputActionsWeapons.Player.Reload.performed += ReloadOnButton;
+        RogLikeInputActionsWeapons.Player.Reload.Enable();
+
 
     }
     private void OnDisable()
     {
         RogLikeInputActionsWeapons.Player.Shoot.Disable();
+        RogLikeInputActionsWeapons.Player.Reload.Disable();
     }
+
+    public void ReloadOnButton(InputAction.CallbackContext Context)
+    {   
+       if (!IsReloading)
+       {
+            StartCoroutine("Reload");
+       }
+        
+    }
+    public IEnumerator Reload()
+    {
+        IsReloading = true;
+        CurrentBullets = 0;
+        AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
+        yield return new WaitForSeconds(3f);
+        CurrentBullets = MaxBullets;
+        AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
+        IsReloading = false;
+    }
+
 
     public void Shoot(InputAction.CallbackContext Context)
     {  
@@ -38,7 +64,7 @@ public class Weapons : MonoBehaviour
 
     public IEnumerator ShootDelay()
     {
-        if (CurrentBullets > 0)
+        if (CurrentBullets > 0 && !IsReloading)
         {
             CurrentBullets--;
             AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
@@ -47,9 +73,11 @@ public class Weapons : MonoBehaviour
             RigidbodyVariable.AddForce(Firepoint.right * BulletSpeed, ForceMode.Impulse);
             if (CurrentBullets <= 0)
             {
+                IsReloading = true;
                 yield return new WaitForSeconds(3f);
                 CurrentBullets = MaxBullets;
                 AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
+                IsReloading = false;
             }
         }    
     }

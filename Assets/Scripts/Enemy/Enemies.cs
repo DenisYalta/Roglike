@@ -5,7 +5,9 @@ using UnityEngine.AI;
 public class Enemies : Mobs
 {
     public float Damage;
+    public float Infection;
     public float RadiusAttackPlayer;
+    
 
     protected float DistanceForPlayer;
 

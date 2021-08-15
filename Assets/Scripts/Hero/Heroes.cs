@@ -66,18 +66,19 @@ public class Heroes : Mobs
         }
         else CurrentHealth += HealthRegen;
 
-        HealthbarVariable.SetHealthBar(CurrentHealth, MaxHealth);
+        HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
         StopCoroutine("Regen");
     }
 
 
-    public IEnumerator HeroTakeDamage(float EnemyDamage)
+    public IEnumerator HeroTakeDamage(float EnemyDamage, float EnemyInfection)
     {
     
         if (IsEnemyHittingHero) 
          { 
             CurrentHealth -= EnemyDamage;
-            HealthbarVariable.SetHealthBar(CurrentHealth, MaxHealth);
+            MaxHealth -= EnemyInfection;
+            HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
 
             if (CurrentHealth <= 0)
             {
@@ -88,7 +89,7 @@ public class Heroes : Mobs
             yield return new WaitForSeconds(1f);
 
             StopCoroutine("HeroTakeDamage");
-            StartCoroutine(HeroTakeDamage(EnemiesVariable.Damage));        
+            StartCoroutine(HeroTakeDamage(EnemiesVariable.Damage, EnemiesVariable.Infection));        
          }       
     }
 
@@ -100,7 +101,7 @@ public class Heroes : Mobs
         {
             IsEnemyHittingHero = true;
             EnemiesVariable = Collision.GetComponent<Enemies>();
-            StartCoroutine (HeroTakeDamage(EnemiesVariable.Damage));
+            StartCoroutine (HeroTakeDamage(EnemiesVariable.Damage, EnemiesVariable.Infection));
             StopCoroutine("HeroTakeDamage");
         }  
     }
@@ -122,7 +123,7 @@ public class Heroes : Mobs
         MaxHealth = CurrentHealth;
         IsEnemyHittingHero = false;
         Controller = GetComponent<CharacterController>();
-        HealthbarVariable.SetMaxHealth(MaxHealth);
+        HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
     }
 
    
