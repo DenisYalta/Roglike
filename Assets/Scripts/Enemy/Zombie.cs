@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Zombie : Enemies
 {
-    void Update()
+    private void Update()
     {
         FollowPlayer();
     }

@@ -9,8 +9,9 @@ public class Heroes : Mobs
     public float MaxHealth;
     public float GettingDamageDelay;
     public float RotationSpeed;
+    public float Speed;
 
-    protected bool IsEnemyHittingHero;
+    public bool IsEnemyHittingHero;
 
     public Enemies EnemiesVariable;
     public HealthBar HealthbarVariable;
@@ -73,7 +74,6 @@ public class Heroes : Mobs
 
     public IEnumerator HeroTakeDamage(float EnemyDamage, float EnemyInfection)
     {
-    
         if (IsEnemyHittingHero) 
          { 
             CurrentHealth -= EnemyDamage;
@@ -89,7 +89,7 @@ public class Heroes : Mobs
             yield return new WaitForSeconds(1f);
 
             StopCoroutine("HeroTakeDamage");
-            StartCoroutine(HeroTakeDamage(EnemiesVariable.Damage, EnemiesVariable.Infection));        
+            StartCoroutine(HeroTakeDamage(EnemyDamage, EnemyInfection));        
          }       
     }
 
@@ -107,10 +107,10 @@ public class Heroes : Mobs
     }
 
 
-    public void OnTriggerExit(Collider collision)
+    public void OnTriggerExit(Collider Collision)
     {
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (Collision.gameObject.CompareTag("Enemy") || Collision.gameObject.CompareTag("Spikes"))
         {
             IsEnemyHittingHero = false;
         }
@@ -123,9 +123,22 @@ public class Heroes : Mobs
         MaxHealth = CurrentHealth;
         IsEnemyHittingHero = false;
         Controller = GetComponent<CharacterController>();
+
+        Debug.Log(HealthbarVariable);
         HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
     }
 
-   
- 
+    public void Update()
+    {
+
+        Movement();
+        if (MaxHealth > CurrentHealth)
+        {
+            StartCoroutine("Regen");
+        }
+
+        HeroLookToMouse();
+    }
+
+
 }

@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &928081722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928081723}
+  m_Layer: 0
+  m_Name: ZombieFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &928081723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928081722}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.019, y: 0.295, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2569560425833960250}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &2147908836103691187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569560425833960254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144642ed369e0714890023ef406dd54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartHealth: 10
+  CurrentHealth: 0
+  Damage: 15
+  Infection: 5
+  RadiusAttackPlayer: 50
+  HeroObject: {fileID: 0}
+  ShootSpeed: 3
+  ZombieBulletSpeed: 15
+  ZombieFirepoint: {fileID: 928081723}
+  ZombieBulletPrefab: {fileID: 3755948642484418879, guid: 184abcc1cfb9fcd4e883c55c52a5b712,
+    type: 3}
+--- !u!1001 &5951291431679918506
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.951368
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.18058395
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989458, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e92231a89c2adec4395dfb544c09e983, type: 2}
+    - target: {fileID: 8160475869750989460, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_Name
+      value: ZombieShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989471, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: StartHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475869750989471, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: Infection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160475870157257535, guid: 0a6eb95ea922f1241ac4344824bc478b,
+        type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8160475869750989471, guid: 0a6eb95ea922f1241ac4344824bc478b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0a6eb95ea922f1241ac4344824bc478b, type: 3}
+--- !u!1 &2569560425833960254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8160475869750989460, guid: 0a6eb95ea922f1241ac4344824bc478b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5951291431679918506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2569560425833960250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5951291431679918506}
+  m_PrefabAsset: {fileID: 0}

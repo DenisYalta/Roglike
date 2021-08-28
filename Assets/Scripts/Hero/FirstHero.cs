@@ -8,24 +8,6 @@ public class FirstHero : Heroes
     public GameObject PlayerHero;
 
 
-    public void Awake()
-    {
-        Instance = this;
-    }
-
-
-    void Update()
-    {
-
-        Movement();
-        if (MaxHealth > CurrentHealth)
-        {
-            StartCoroutine ("Regen"); 
-        }
-
-        HeroLookToMouse();
-    }
-
     private void FixedUpdate()
     {
         

@@ -58,12 +58,14 @@ public class Weapons : MonoBehaviour
 
 
     public void Shoot(InputAction.CallbackContext Context)
-    {  
+    {
+        
         StartCoroutine("ShootDelay");    
     }
 
     public IEnumerator ShootDelay()
     {
+
         if (CurrentBullets > 0 && !IsReloading)
         {
             CurrentBullets--;

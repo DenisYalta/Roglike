@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-
     public Slider HealthSlider;
     public Text HealthAmmountText;
 

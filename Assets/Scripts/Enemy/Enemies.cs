@@ -12,17 +12,17 @@ public class Enemies : Mobs
     protected float DistanceForPlayer;
 
     
-    public Transform EnemyTarget;
+    public GameObject HeroObject;
     protected NavMeshAgent EnemyAgent;
 
 
     protected void FollowPlayer()
     {
-        DistanceForPlayer = Vector3.Distance(EnemyTarget.position, transform.position);
+        DistanceForPlayer = Vector3.Distance(HeroObject.transform.position, transform.position);
 
         if (DistanceForPlayer<= RadiusAttackPlayer)
         {
-            EnemyAgent.SetDestination(EnemyTarget.position);
+            EnemyAgent.SetDestination(HeroObject.transform.position);
         }
 
         if (DistanceForPlayer <= EnemyAgent.stoppingDistance)
@@ -34,7 +34,7 @@ public class Enemies : Mobs
 
     public void FaceTarget()
     {
-        Vector3 Direction = (EnemyTarget.position - transform.position).normalized;
+        Vector3 Direction = (HeroObject.transform.position - transform.position).normalized;
         Quaternion LookRotation = Quaternion.LookRotation(new Vector3(Direction.x, 0, Direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, LookRotation, Time.deltaTime * 5f);
     }
@@ -46,23 +46,28 @@ public class Enemies : Mobs
         Gizmos.DrawWireSphere(transform.position, RadiusAttackPlayer);
     }
 
-    public void EnemyTakeDamage(float WeaponDamage)
+    public  void EnemyTakeDamage(float DealedDamage)
     {
-        CurrentHealth -= WeaponDamage;
+        CurrentHealth -= DealedDamage;
         if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
 
+    }
+
+    public virtual void Die()
+    {
+        Destroy(gameObject);
     }
 
 
     public void Awake()
     {
+        HeroObject = GameObject.Find("MainHero");
 
-        // EnemyTarget = FirstHero.Instance.PlayerHero.transform;
-        
-         EnemyAgent = GetComponent<NavMeshAgent>();
+        EnemyAgent = GetComponent<NavMeshAgent>();
+        CurrentHealth = StartHealth;
     }
 }
 

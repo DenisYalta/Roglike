@@ -2,17 +2,18 @@
 
 public class Bullet : MonoBehaviour
 {
+
     public Weapons ShootingWeapon;
     public Enemies HitEnemy;
 
 
-    public void OnTriggerEnter(Collider Collision)
+    public void OnTriggerEnter(Collider Collider)
     {
  
-        if (Collision.gameObject.CompareTag("Enemy"))
+        if (Collider.gameObject.CompareTag("Enemy"))
         {
             
-            HitEnemy = Collision.GetComponent<Enemies>();
+            HitEnemy = Collider.GetComponent<Enemies>();
             HitEnemy.EnemyTakeDamage(ShootingWeapon.Damage);
                 
         }
@@ -25,8 +26,5 @@ public class Bullet : MonoBehaviour
 
 
 
-    void Update()
-    {
-        
-    }
+
 }
