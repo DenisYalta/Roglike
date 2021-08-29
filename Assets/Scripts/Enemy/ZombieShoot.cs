@@ -7,14 +7,20 @@ public class ZombieShoot : Enemies
     public float ShootSpeed;
     public float ZombieBulletSpeed;
 
-    public Transform ZombieFirepoint;
+    public Transform [] ZombieFirepoints;
     public GameObject ZombieBulletPrefab;
 
     public void ShootAtPlayer()
     {
-        GameObject ZombieBullet = Instantiate(ZombieBulletPrefab, ZombieFirepoint.position, ZombieFirepoint.rotation);
-        Rigidbody RigidbodyVariable = ZombieBullet.GetComponent<Rigidbody>();
-        RigidbodyVariable.AddForce(ZombieFirepoint.right * ZombieBulletSpeed, ForceMode.Impulse);
+        GameObject ZombieBullet;
+        Rigidbody RigidbodyVariable;
+        for (int i=0; i< ZombieFirepoints.Length; i++)
+        {
+            ZombieBullet = Instantiate(ZombieBulletPrefab, ZombieFirepoints[i].position, ZombieFirepoints[i].rotation);
+            RigidbodyVariable = ZombieBullet.GetComponent<Rigidbody>();
+            RigidbodyVariable.AddForce(ZombieFirepoints[i].right * ZombieBulletSpeed, ForceMode.Impulse);
+        }
+
     }
 
     void Start()

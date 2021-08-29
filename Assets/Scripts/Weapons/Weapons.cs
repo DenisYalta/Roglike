@@ -4,15 +4,14 @@ using UnityEngine.InputSystem;
 
 public class Weapons : MonoBehaviour
 {
-    public float Damage;
     public float BulletSpeed;
-    public float SpeedAttack;
     public float MaxBullets;
     public float CurrentBullets;
+    public float ReloadTime;
 
     public bool IsReloading = false;
 
-    public Transform Firepoint;
+    public Transform MainFirepoint;
     public GameObject BulletPrefab;
 
     public AmmountOfBullets AmmountOfBulletsVariable;
@@ -50,7 +49,7 @@ public class Weapons : MonoBehaviour
         IsReloading = true;
         CurrentBullets = 0;
         AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(ReloadTime);
         CurrentBullets = MaxBullets;
         AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
         IsReloading = false;
@@ -59,30 +58,26 @@ public class Weapons : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext Context)
     {
-        
-        StartCoroutine("ShootDelay");    
-    }
-
-    public IEnumerator ShootDelay()
-    {
-
         if (CurrentBullets > 0 && !IsReloading)
         {
             CurrentBullets--;
             AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
-            GameObject Bullet = Instantiate(BulletPrefab, Firepoint.position, Firepoint.rotation);
-            Rigidbody RigidbodyVariable = Bullet.GetComponent<Rigidbody>();
-            RigidbodyVariable.AddForce(Firepoint.right * BulletSpeed, ForceMode.Impulse);
+            SpawnBullets();
             if (CurrentBullets <= 0)
             {
                 IsReloading = true;
-                yield return new WaitForSeconds(3f);
-                CurrentBullets = MaxBullets;
-                AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
-                IsReloading = false;
+                StartCoroutine("Reload");
             }
-        }    
+        }
+
     }
+    public virtual void SpawnBullets()
+    {
+        GameObject Bullet = Instantiate(BulletPrefab, MainFirepoint.position, MainFirepoint.rotation);
+        Rigidbody RigidbodyVariable = Bullet.GetComponent<Rigidbody>();
+        RigidbodyVariable.AddForce(MainFirepoint.right * BulletSpeed, ForceMode.Impulse);
+    }
+
 
     private void Awake()
     {

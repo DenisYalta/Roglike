@@ -123,6 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf09539d2b84bd4f9e1713bbb3ebd1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShootingWeapon: {fileID: 1154160643454988812, guid: 0022062fa07b41c4d8633c0fced56b9d,
-    type: 3}
   HitEnemy: {fileID: 0}
+  Damage: 10

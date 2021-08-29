@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928081722}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.019, y: 0.295, z: 0.9}
+  m_LocalPosition: {x: 0.053, y: 0.295, z: 0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2569560425833960250}
@@ -50,9 +50,72 @@ MonoBehaviour:
   HeroObject: {fileID: 0}
   ShootSpeed: 3
   ZombieBulletSpeed: 15
-  ZombieFirepoint: {fileID: 928081723}
+  ZombieFirepoints:
+  - {fileID: 928081723}
+  - {fileID: 6019544165013660354}
+  - {fileID: 4352646531858034057}
   ZombieBulletPrefab: {fileID: 3755948642484418879, guid: 184abcc1cfb9fcd4e883c55c52a5b712,
     type: 3}
+--- !u!1 &3887510286152499885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4352646531858034057}
+  m_Layer: 0
+  m_Name: ZombieFirePointRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4352646531858034057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887510286152499885}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.932, y: 0.295, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2569560425833960250}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &6945842735533801995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6019544165013660354}
+  m_Layer: 0
+  m_Name: ZombieFirePointLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6019544165013660354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6945842735533801995}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.648, y: 0.295, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2569560425833960250}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &5951291431679918506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,7 +126,7 @@ PrefabInstance:
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.951368
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
@@ -123,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 8160475869750989460, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
       propertyPath: m_Name
-      value: ZombieShoot
+      value: ZombieShoot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8160475869750989471, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}

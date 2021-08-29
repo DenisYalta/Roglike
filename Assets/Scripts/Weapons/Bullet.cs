@@ -3,8 +3,9 @@
 public class Bullet : MonoBehaviour
 {
 
-    public Weapons ShootingWeapon;
+
     public Enemies HitEnemy;
+    public float Damage;
 
 
     public void OnTriggerEnter(Collider Collider)
@@ -14,7 +15,7 @@ public class Bullet : MonoBehaviour
         {
             
             HitEnemy = Collider.GetComponent<Enemies>();
-            HitEnemy.EnemyTakeDamage(ShootingWeapon.Damage);
+            HitEnemy.EnemyTakeDamage(Damage);
                 
         }
         Destroy(gameObject);
@@ -23,7 +24,6 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 
 
 
