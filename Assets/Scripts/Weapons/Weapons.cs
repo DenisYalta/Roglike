@@ -83,6 +83,7 @@ public class Weapons : MonoBehaviour
     {
         RogLikeInputActionsWeapons = new RogLike();
         CurrentBullets = MaxBullets;
+        AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
 
     }
     private void Update()

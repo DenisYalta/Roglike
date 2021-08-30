@@ -15,18 +15,25 @@ public class Heroes : Mobs
 
     public Enemies EnemiesVariable;
     public HealthBar HealthbarVariable;
+    public FirstAid UseFirstAid;
+
+    private RogLike InputHeal;
 
     public InputAction WASD; // Movement
     public CharacterController Controller;
     public Transform MainHero;
+    
 
     private void OnEnable()
     {
         WASD.Enable();
+        InputHeal.Player.Heal.performed += Heal;
+        InputHeal.Player.Heal.Enable();
     }
     private void OnDisable()            //Input Movement
     {
         WASD.Disable();
+        InputHeal.Player.Heal.Disable();
     }
 
 
@@ -116,6 +123,17 @@ public class Heroes : Mobs
         }
     }
 
+
+    public void Heal(InputAction.CallbackContext Context)
+    {
+        UseFirstAid.UseFirstAid();
+        HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
+    }
+
+    private void Awake()
+    {
+        InputHeal = new RogLike();
+    }
 
     void Start()
     {
