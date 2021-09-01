@@ -15,7 +15,7 @@ public class Heroes : Mobs
 
     public Enemies EnemiesVariable;
     public HealthBar HealthbarVariable;
-    public FirstAid UseFirstAid;
+    public Collect UseFirstAid;
 
     private RogLike InputHeal;
 
@@ -64,19 +64,6 @@ public class Heroes : Mobs
         }
     }
 
-    public IEnumerator Regen()
-    {
-        yield return new WaitForSeconds(1f);
-
-        if (CurrentHealth + HealthRegen > MaxHealth)
-        {
-            CurrentHealth = MaxHealth;
-        }
-        else CurrentHealth += HealthRegen;
-
-        HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
-        StopCoroutine("Regen");
-    }
 
 
     public IEnumerator HeroTakeDamage(float EnemyDamage, float EnemyInfection)
@@ -126,13 +113,56 @@ public class Heroes : Mobs
 
     public void Heal(InputAction.CallbackContext Context)
     {
-        UseFirstAid.UseFirstAid();
-        HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
+        UseHeal();
     }
 
-    private void Awake()
+    public void UseHeal()
+    {
+        if (Collect.CollectArray.ContainsKey("FirstAid") && Collect.CollectArray["FirstAid"] > 0)
+        {
+            Debug.Log("Used");
+            Collect.CollectArray["FirstAid"]--;
+            MaxHealth = StartHealth;
+            StartCoroutine("Regen");
+            HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
+            
+        }
+        else
+        {
+            Debug.Log("No Aid");
+        }
+
+    }
+
+
+    public IEnumerator Regen()
+    {
+
+        while (CurrentHealth != MaxHealth && IsEnemyHittingHero == false)
+        {
+            yield return new WaitForSeconds(1f);
+            if (CurrentHealth + HealthRegen >= MaxHealth)
+            {
+                CurrentHealth = MaxHealth;
+                StopCoroutine("Regen");
+            }
+            else
+            {   
+                CurrentHealth += HealthRegen;
+            }
+
+            HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
+        }
+        StopCoroutine("Regen");
+    }
+
+
+
+
+        private void Awake()
     {
         InputHeal = new RogLike();
+        Collect UseFirstAid = new Collect();
     }
 
     void Start()
@@ -146,15 +176,11 @@ public class Heroes : Mobs
         HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
     }
 
+
     public void Update()
     {
 
         Movement();
-        if (MaxHealth > CurrentHealth)
-        {
-            StartCoroutine("Regen");
-        }
-
         HeroLookToMouse();
     }
 

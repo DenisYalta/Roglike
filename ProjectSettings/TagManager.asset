@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Spikes
+  - FirstAid
+  - Wood
+  - Iron
   layers:
   - Default
   - TransparentFX

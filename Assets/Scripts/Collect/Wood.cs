@@ -1,11 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class FirstAid : Collect
+public class Wood : Collect
 {
-
+	
 }
-
-

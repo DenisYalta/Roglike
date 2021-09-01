@@ -5,20 +5,25 @@ using UnityEngine;
 public class Collect : MonoBehaviour
 {
 
-    public static float CollectAmmounts = 0f;
+    public static Dictionary<string, int> CollectArray = new Dictionary<string, int>();
 
 
     public void OnTriggerEnter(Collider Collider)
-    {
+    { 
         if(Collider.gameObject.CompareTag("Player"))
         {
-            CollectAmmounts++;
+            if (CollectArray.ContainsKey(gameObject.name))
+            {
+                CollectArray[gameObject.name]++;
+                Debug.Log("I have it");
+            }
+            else
+            {
+                Debug.Log("Added");
+                CollectArray.Add(gameObject.name, 1);
+            }
             Destroy(gameObject);
         }
     }
-
-
-
-
 
 }

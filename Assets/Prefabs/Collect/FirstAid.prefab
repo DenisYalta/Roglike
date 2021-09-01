@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2ff0b252a14824e8d1c28bd669dbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeroesVariable: {fileID: 0}
+  HeroesVariable: {fileID: 5179757130859004053, guid: f840ae9207dd97e4b895923e81d79840,
+    type: 3}
 --- !u!1 &5054711585213629737
 GameObject:
   m_ObjectHideFlags: 0

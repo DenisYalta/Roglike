@@ -116,14 +116,14 @@ MonoBehaviour:
   StartHealth: 50
   CurrentHealth: 50
   HealthRegen: 1
-  MaxHealth: 0
+  MaxHealth: 50
   GettingDamageDelay: 0
   RotationSpeed: 7
   Speed: 3
   IsEnemyHittingHero: 0
   EnemiesVariable: {fileID: 0}
   HealthbarVariable: {fileID: 0}
-  UseFirstAid: {fileID: 0}
+  UseFirstAid: {fileID: 388699910, guid: be7da4afe81639745822fe6247ef54f6, type: 3}
   WASD:
     m_Name: WASD
     m_Type: 0
