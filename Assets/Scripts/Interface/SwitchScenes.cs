@@ -2,15 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SwitchScenes : MonoBehaviour
 {
     public Animator Transition;
+
+    public static Dictionary <string, int> BaseCollectArray = new Dictionary<string, int>();
+    public Dictionary<string, int> ItemsToAdd = new Dictionary<string, int>();
+
+
+    public Collect Collectable;
     public void OnTriggerEnter(Collider Collision)
     {
+        int LevelIndex;
         if (Collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + 1));
+            if(SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                ItemsToAdd = Collectable.GetBaseResources();
+
+                BaseCollectArray = Collectable.UnionDictionaries(ItemsToAdd, BaseCollectArray);
+
+
+                LevelIndex = -1;
+               
+                
+            }
+            else
+            {
+                LevelIndex = 1;
+            }
+            StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + LevelIndex));
         }      
     }
 
@@ -20,4 +43,7 @@ public class SwitchScenes : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(LevelIndex);
     }
+
+
+ 
 }

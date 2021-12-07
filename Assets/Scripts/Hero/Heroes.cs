@@ -76,8 +76,8 @@ public class Heroes : Mobs
 
             if (CurrentHealth <= 0)
             {
-                IsEnemyHittingHero = false;
-                Destroy(gameObject);
+                Die();
+
             }
            
             yield return new WaitForSeconds(1f);
@@ -86,6 +86,15 @@ public class Heroes : Mobs
             StartCoroutine(HeroTakeDamage(EnemyDamage, EnemyInfection));        
          }       
     }
+
+
+    public void Die()
+    {
+        IsEnemyHittingHero = false;
+        Destroy(gameObject);
+        Collect.CollectArray.Clear();
+    }
+
 
 
     public void OnTriggerEnter (Collider Collision)
@@ -110,13 +119,7 @@ public class Heroes : Mobs
         }
     }
 
-
     public void Heal(InputAction.CallbackContext Context)
-    {
-        UseHeal();
-    }
-
-    public void UseHeal()
     {
         if (Collect.CollectArray.ContainsKey("FirstAid") && Collect.CollectArray["FirstAid"] > 0)
         {
@@ -172,7 +175,6 @@ public class Heroes : Mobs
         IsEnemyHittingHero = false;
         Controller = GetComponent<CharacterController>();
 
-        Debug.Log(HealthbarVariable);
         HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
     }
 
