@@ -47,12 +47,15 @@ public class Weapons : MonoBehaviour
     public IEnumerator Reload()
     {
         IsReloading = true;
+        FindObjectOfType<AudioManager>().PlaySounds(gameObject.name+"Reload");
+      
         CurrentBullets = 0;
         AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
         yield return new WaitForSeconds(ReloadTime);
         CurrentBullets = MaxBullets;
         AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
         IsReloading = false;
+
     }
 
 
@@ -60,6 +63,8 @@ public class Weapons : MonoBehaviour
     {
         if (CurrentBullets > 0 && !IsReloading)
         {
+            FindObjectOfType<AudioManager>().PlaySounds(gameObject.name);
+
             CurrentBullets--;
             AmmountOfBulletsVariable.SetAmmountOfBullets(CurrentBullets, MaxBullets);
             SpawnBullets();

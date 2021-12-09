@@ -20,9 +20,8 @@ public class SwitchScenes : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().buildIndex == 1)
             {
-                ItemsToAdd = Collectable.GetBaseResources();
-
-                BaseCollectArray = Collectable.UnionDictionaries(ItemsToAdd, BaseCollectArray);
+                ItemsToAdd = Collectable.GetBaseResources(); 
+                BaseCollectArray = Collectable.UnionDictionaries(ItemsToAdd, BaseCollectArray);  //Union 2 dict
 
 
                 LevelIndex = -1;

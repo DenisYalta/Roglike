@@ -41,22 +41,22 @@ public class Collect : MonoBehaviour
         }
     }
 
-    public Dictionary<string, int> UnionDictionaries(Dictionary<string, int>  Dict1, Dictionary<string, int> Dict2)
+    public Dictionary<string, int> UnionDictionaries(Dictionary<string, int>  Inventory, Dictionary<string, int> Base)
     {
-        foreach (KeyValuePair<string, int> item1 in Dict1) 
+        foreach (KeyValuePair<string, int> InventoryItem in Inventory) 
         {
             
-            if (Dict2.ContainsKey(item1.Key))
+            if (Base.ContainsKey(InventoryItem.Key))
             {
-                Dict2[item1.Key]++;
+                Base[InventoryItem.Key]++;
             }
             else
             {
-                Dict2.Add(item1.Key, item1.Value);
+                Base.Add(InventoryItem.Key, InventoryItem.Value);
             }
         }
 
-        return Dict2;
+        return Base;
     }
 
 }
