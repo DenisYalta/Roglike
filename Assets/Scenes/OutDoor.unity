@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 3643182843652646812, guid: bda5565bb51b01d4a9fccffd4995e689,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3643182843652646812, guid: bda5565bb51b01d4a9fccffd4995e689,
         type: 3}
@@ -638,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
@@ -971,6 +971,42 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Sorce: {fileID: 0}
+  - Clip: {fileID: 8300000, guid: 0c19cb7191759c748982b452fa69cc87, type: 3}
+    Name: man-hurt-noises-1
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Sorce: {fileID: 0}
+  - Clip: {fileID: 8300000, guid: 69134bcdbe5c1ea45bf4da1e74d44b23, type: 3}
+    Name: man-hurt-noises-2
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Sorce: {fileID: 0}
+  - Clip: {fileID: 8300000, guid: da3282428eb7c3546b284d455fd16bd2, type: 3}
+    Name: man-hurt-noises-3
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Sorce: {fileID: 0}
+  - Clip: {fileID: 8300000, guid: 43a91bf53ecc09047ba6d752cab70ad2, type: 3}
+    Name: man-hurt-noises-4
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Sorce: {fileID: 0}
+  - Clip: {fileID: 8300000, guid: 6c75d50430f0cf545b89651fcd6bbf50, type: 3}
+    Name: man-hurt-noises-5
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Sorce: {fileID: 0}
+  - Clip: {fileID: 8300000, guid: c4f9cc165339a5947860b1ba1baa290c, type: 3}
+    Name: man-hurt-noises-6
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Sorce: {fileID: 0}
 --- !u!1001 &2054567814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1016,7 +1052,7 @@ PrefabInstance:
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8160475869750989456, guid: 0a6eb95ea922f1241ac4344824bc478b,
         type: 3}
@@ -1159,7 +1195,7 @@ PrefabInstance:
     - target: {fileID: 57111666929544585, guid: 6ef3859a3375c234bb7c512fb2b3cc63,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 57111666929544585, guid: 6ef3859a3375c234bb7c512fb2b3cc63,
         type: 3}

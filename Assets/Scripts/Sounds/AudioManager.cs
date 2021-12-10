@@ -5,6 +5,7 @@ public class AudioManager : MonoBehaviour
 {
     
     public Sounds[] ArrayOfSounds;
+   
 
     public static AudioManager Instance; 
 

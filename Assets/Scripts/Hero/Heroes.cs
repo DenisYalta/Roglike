@@ -22,6 +22,7 @@ public class Heroes : Mobs
     public InputAction WASD; // Movement
     public CharacterController Controller;
     public Transform MainHero;
+    public System.Random RandomHeroDamageSound = new System.Random();
     
 
     private void OnEnable()
@@ -69,7 +70,8 @@ public class Heroes : Mobs
     public IEnumerator HeroTakeDamage(float EnemyDamage, float EnemyInfection)
     {
         if (IsEnemyHittingHero) 
-         { 
+         {
+            FindObjectOfType<AudioManager>().PlaySounds("man-hurt-noises-" + RandomHeroDamageSound.Next(1, 7));
             CurrentHealth -= EnemyDamage;
             MaxHealth -= EnemyInfection;
             HealthbarVariable.SetHealthBar(MaxHealth, CurrentHealth);
