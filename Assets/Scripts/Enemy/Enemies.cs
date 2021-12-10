@@ -11,9 +11,12 @@ public class Enemies : Mobs
 
     protected float DistanceForPlayer;
 
-    
+    private System.Random RandomSoundOnHit = new System.Random();
+
     public GameObject HeroObject;
     protected NavMeshAgent EnemyAgent;
+
+
 
 
     protected void FollowPlayer()
@@ -48,7 +51,11 @@ public class Enemies : Mobs
 
     public  void EnemyTakeDamage(float DealedDamage)
     {
+       
+
         CurrentHealth -= DealedDamage;
+
+        FindObjectOfType<AudioManager>().PlaySounds("bullet-hit-body-"+RandomSoundOnHit.Next(1,8));
         if (CurrentHealth <= 0)
         {
             Die();
@@ -68,6 +75,7 @@ public class Enemies : Mobs
 
         EnemyAgent = GetComponent<NavMeshAgent>();
         CurrentHealth = StartHealth;
+
     }
 }
 
