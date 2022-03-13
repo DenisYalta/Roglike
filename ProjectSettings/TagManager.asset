@@ -9,6 +9,7 @@ TagManager:
   - FirstAid
   - Wood
   - Iron
+  - Upgrade
   layers:
   - Default
   - TransparentFX

@@ -7,14 +7,20 @@ public class Collect : MonoBehaviour
 
     public static Dictionary<string, int> CollectArray = new Dictionary<string, int>(); //Items Player Collected
 
+    public Upgrade UpgradeVariable;
 
 
     public void OnTriggerEnter(Collider Collider)
     { 
         if(Collider.gameObject.CompareTag("Player"))
         {
-            AddNewItems();
-            Destroy(gameObject);
+            if(gameObject.CompareTag("Upgrade"))
+            {
+                UpgradeVariable.UpgradePicked();
+            }
+            else AddNewItems();
+
+        Destroy(gameObject);
         }
         
     }
@@ -29,6 +35,7 @@ public class Collect : MonoBehaviour
 
     public void AddNewItems()
     {
+        FindObjectOfType<AudioManager>().PlaySounds("PickupAnItem");
         if (CollectArray.ContainsKey(gameObject.name))
         {
             CollectArray[gameObject.name]++;

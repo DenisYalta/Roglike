@@ -14,7 +14,9 @@ public class Spawner : Enemies
     {
         GameObject SpawnZombie = Instantiate(ZombiePrefab, SpawnPlace.position, SpawnPlace.rotation);
     }
-    
+   
+
+
     void Start()
     {
         InvokeRepeating("SpawnEnemy", SpawnRepeat, SpawnRepeat);

@@ -112,6 +112,8 @@ MonoBehaviour:
   Damage: 5
   Infection: 1
   RadiusAttackPlayer: 0
+  WinStateVariable: {fileID: 6906454918806495027, guid: 8d837be59e768dd4cbd8b06298482642,
+    type: 3}
   HeroObject: {fileID: 0}
   ZombiePrefab: {fileID: 8160475869750989460, guid: 0a6eb95ea922f1241ac4344824bc478b,
     type: 3}
