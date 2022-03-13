@@ -6,12 +6,23 @@ public class WinState : MonoBehaviour
 {
 	public GameObject UpgradePrefab;
 
+
+
 	public void  SpawnUpgrade(Vector3 Position, Quaternion Rotation)
 	{
 		Instantiate(UpgradePrefab, Position, Rotation);
 	}
 
-	                        
+	private void Start()
+	{
+		EventManager.SpawnUpgradeEvent += SpawnUpgrade;
+	}
+
+	private void OnDisable()
+	{
+		EventManager.SpawnUpgradeEvent -= SpawnUpgrade;
+	}
+
 
 
 

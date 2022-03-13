@@ -7,7 +7,6 @@ public class Collect : MonoBehaviour
 
     public static Dictionary<string, int> CollectArray = new Dictionary<string, int>(); //Items Player Collected
 
-    public Upgrade UpgradeVariable;
 
 
     public void OnTriggerEnter(Collider Collider)
@@ -16,7 +15,7 @@ public class Collect : MonoBehaviour
         {
             if(gameObject.CompareTag("Upgrade"))
             {
-                UpgradeVariable.UpgradePicked();
+                EventManager.CallUpgradeEvent();
             }
             else AddNewItems();
 

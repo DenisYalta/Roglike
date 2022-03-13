@@ -14,7 +14,6 @@ public class Enemies : Mobs
 
     protected static int NumberOfEnemies = 0;
 
-    public WinState WinStateVariable;
 
     public GameObject HeroObject;
     public GameObject PlaceForUpgrade;
@@ -77,12 +76,11 @@ public class Enemies : Mobs
        
         EnemyAlive = false;
         NumberOfEnemies--;
-        Debug.Log(NumberOfEnemies); 
         Destroy(gameObject);
         
         if (NumberOfEnemies <= 0)
         {
-            WinStateVariable.SpawnUpgrade(PlaceForUpgrade.transform.position, PlaceForUpgrade.transform.rotation);
+            EventManager.CallSpawnUpgradeEvent(PlaceForUpgrade.transform.position, PlaceForUpgrade.transform.rotation);
         }
     }
 
