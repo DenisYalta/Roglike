@@ -99,7 +99,7 @@ public class Enemies : Mobs
 
         EnemyAlive = true;
         NumberOfEnemies++;
-        HeroObject = GameObject.Find("MainHero");
+        HeroObject = GameObject.Find("Soldier");
 
         PlaceForUpgrade = GameObject.Find("PlaceForUpgrade");
 

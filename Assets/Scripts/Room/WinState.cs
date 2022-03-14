@@ -11,6 +11,7 @@ public class WinState : MonoBehaviour
 	public void  SpawnUpgrade(Vector3 Position, Quaternion Rotation)
 	{
 		Instantiate(UpgradePrefab, Position, Rotation);
+		Destroy(gameObject);
 	}
 
 	private void Start()
