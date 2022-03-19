@@ -16,7 +16,7 @@ public class Enemies : Mobs
 
 
     public GameObject HeroObject;
-    public GameObject PlaceForUpgrade;
+    public static GameObject PlaceForUpgrade;
 
     protected NavMeshAgent EnemyAgent;
 
