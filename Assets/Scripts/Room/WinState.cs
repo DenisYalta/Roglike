@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class WinState : MonoBehaviour
 {
-	public GameObject UpgradePrefab;
-
+	public GameObject [] UpgradePrefab;
+	System.Random RandomUpgrade = new System.Random();
 
 
 	public void  SpawnUpgrade(Vector3 Position, Quaternion Rotation)
 	{
-		Instantiate(UpgradePrefab, Position, Rotation);
+		Instantiate(UpgradePrefab[RandomUpgrade.Next(0, 10)], Position, Rotation);
 		Destroy(gameObject);
 	}
 
