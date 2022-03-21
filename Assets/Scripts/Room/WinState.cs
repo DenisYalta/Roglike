@@ -5,6 +5,8 @@ using UnityEngine;
 public class WinState : MonoBehaviour
 {
 	public GameObject [] UpgradePrefab;
+
+
 	System.Random RandomUpgrade = new System.Random();
 
 
@@ -13,6 +15,8 @@ public class WinState : MonoBehaviour
 		Instantiate(UpgradePrefab[RandomUpgrade.Next(0, 10)], Position, Rotation);
 		Destroy(gameObject);
 	}
+
+
 
 	private void Start()
 	{

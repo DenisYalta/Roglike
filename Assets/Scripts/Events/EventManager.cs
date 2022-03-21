@@ -14,7 +14,6 @@ public class EventManager : MonoBehaviour
 	}
 
 
-
 	public static void CallSpawnUpgradeEvent(Vector3 Position, Quaternion Rotation)
 	{
 		SpawnUpgradeEvent(Position, Rotation);

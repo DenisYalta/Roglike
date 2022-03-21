@@ -11,38 +11,54 @@ public class SwitchScenes : MonoBehaviour
     public static Dictionary <string, int> BaseCollectArray = new Dictionary<string, int>();
     public Dictionary<string, int> ItemsToAdd = new Dictionary<string, int>();
 
+    static int IndexDifficult = 0;
+
+
+
+
+
 
     public Collect Collectable;
     public void OnTriggerEnter(Collider Collision)
     {
-        int LevelIndex;
-        if (Collision.gameObject.CompareTag("Player"))
+        
+
+        if (Collision.gameObject.CompareTag("Player")) 
         {
-            if(SceneManager.GetActiveScene().buildIndex == 1)
+            
+            IndexDifficult++;
+
+            //case with diff
+            // load random scene
+            if (SceneManager.GetActiveScene().buildIndex == 1) // going to the base
             {
                 ItemsToAdd = Collectable.GetBaseResources(); 
                 BaseCollectArray = Collectable.UnionDictionaries(ItemsToAdd, BaseCollectArray);  //Union 2 dict
 
 
-                LevelIndex = -1;
+                IndexDifficult = 0;
                
                 
             }
             else
             {
-                LevelIndex = 1;
+                IndexDifficult = 1;
             }
-            StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + LevelIndex));
+
+
+            StartCoroutine(LoadNextScene(SceneManager.GetActiveScene().buildIndex + IndexDifficult));
         }      
     }
 
-   public IEnumerator LoadNextScene(int LevelIndex)
+   public IEnumerator LoadNextScene(int IndexDifficult)
     {
         Transition.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(LevelIndex);
+        SceneManager.LoadScene(IndexDifficult);
     }
 
+ 
+       
 
  
 }
