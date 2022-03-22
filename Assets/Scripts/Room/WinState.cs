@@ -12,7 +12,7 @@ public class WinState : MonoBehaviour
 
 	public void  SpawnUpgrade(Vector3 Position, Quaternion Rotation)
 	{
-		Instantiate(UpgradePrefab[RandomUpgrade.Next(0, 10)], Position, Rotation);
+		Instantiate(UpgradePrefab[RandomUpgrade.Next(1, 10)], Position, Rotation);
 		Destroy(gameObject);
 	}
 

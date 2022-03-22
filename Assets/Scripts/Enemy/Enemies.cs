@@ -80,6 +80,7 @@ public class Enemies : Mobs
         
         if (NumberOfEnemies <= 0)
         {
+
             EventManager.CallSpawnUpgradeEvent(PlaceForUpgrade.transform.position, PlaceForUpgrade.transform.rotation);
         }
     }
