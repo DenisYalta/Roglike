@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8190e6c7d92de324fa8adaa5c88fa2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WayoutPrefab: {fileID: 2187096285125160732, guid: fe820fef6de5bdc4fb298578151ce1d1,
+  WayoutPrefab: {fileID: 1028842923486179816, guid: 8f85ef51865b6534a9aa4a663799e458,
     type: 3}
   PlaceForWayout: {fileID: 0}
 --- !u!64 &-1492589391162847130

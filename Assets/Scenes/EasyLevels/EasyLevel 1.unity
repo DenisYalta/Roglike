@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5939ed9ea71b93347b9e33ac5916e800,
+    type: 2}
   m_LightingSettings: {fileID: 1298243251}
 --- !u!196 &4
 NavMeshSettings:
@@ -10401,6 +10402,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4067846404291735927, guid: baef1265dc672394aa19127bb67b3122,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 85.79083
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067846404291735927, guid: baef1265dc672394aa19127bb67b3122,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 6.56e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067846404291735927, guid: baef1265dc672394aa19127bb67b3122,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 4.024494
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067846404291735927, guid: baef1265dc672394aa19127bb67b3122,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 6.56e-43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baef1265dc672394aa19127bb67b3122, type: 3}
 --- !u!1001 &4710675962786568176
@@ -10548,7 +10569,7 @@ PrefabInstance:
     - target: {fileID: 4597284530485062100, guid: eb32b2fe9d249cb49a022ca362fc853c,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb32b2fe9d249cb49a022ca362fc853c, type: 3}
