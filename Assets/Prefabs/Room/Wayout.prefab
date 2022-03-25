@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transition: {fileID: 0}
-  AllEasyLevels: 0100000002000000030000000400000005000000
+  AllEasyLevels: 0100000002000000
   Collectable: {fileID: 388699910, guid: be7da4afe81639745822fe6247ef54f6, type: 3}

@@ -40,7 +40,7 @@ public class SwitchScenes : MonoBehaviour
             
                 StartCoroutine(LoadNextScene(EasyLevels[RandomLevel.Next(0, EasyLevels.Count())]));
             }
-            else if (IndexDifficult <= 5) // load easy levels
+            else if (IndexDifficult <= 2) // load easy levels
             {
 
                 StartCoroutine(LoadNextScene(EasyLevels[RandomLevel.Next(0, EasyLevels.Count())]));
