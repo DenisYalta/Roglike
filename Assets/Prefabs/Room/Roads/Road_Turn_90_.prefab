@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3471808333804329053}
   - component: {fileID: 540868307967465464}
   - component: {fileID: 2334407864639693618}
+  - component: {fileID: 3052047183342858827}
   m_Layer: 0
   m_Name: Road_Turn_90_
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3052047183342858827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279976441087886055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.000003, y: 0.24688129, z: 13.000002}
+  m_Center: {x: -6.4999986, y: 0.123438545, z: 6.499996}

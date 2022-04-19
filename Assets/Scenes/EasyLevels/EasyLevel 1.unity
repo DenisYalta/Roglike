@@ -9866,11 +9866,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4597284530485062100, guid: eb32b2fe9d249cb49a022ca362fc853c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb32b2fe9d249cb49a022ca362fc853c, type: 3}
 --- !u!1001 &6203400428770187479

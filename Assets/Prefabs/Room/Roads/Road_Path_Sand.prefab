@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4884285759475957056}
   - component: {fileID: 8387852671702217445}
   - component: {fileID: 6017746820347708975}
+  - component: {fileID: 8035372448648296298}
   m_Layer: 0
   m_Name: Road_Path_Sand
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5225205439462926330}
-  m_LocalRotation: {x: -0, y: -0.7071016, z: -0, w: -0.707112}
+  m_LocalRotation: {x: -0, y: -0.70710045, z: 0, w: -0.70711315}
   m_LocalPosition: {x: 136.4201, y: 0, z: 29.509804}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8035372448648296298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5225205439462926330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13, y: 0.04, z: 13.000001}
+  m_Center: {x: -6.5, y: -0.0000010589138, z: 6.5000005}
