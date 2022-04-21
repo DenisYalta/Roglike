@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Base/Base.unity
     guid: 1c09e3a0626dc7c4f82a526253ebff32
   - enabled: 1
-    path: Assets/Scenes/EasyLevels/EasyLevel 1.unity
+    path: Assets/Scenes/EasyLevels/EasyLevel 1/EasyLevel 1.unity
     guid: 45a792dc46e69844a8c36e8660e22ff8
   - enabled: 1
-    path: Assets/Scenes/EasyLevels/EasyLevel 2.unity
+    path: Assets/Scenes/EasyLevels/EasyLevel 2/EasyLevel 2.unity
     guid: b4f7e100300802a42a0455c1c90d7746
+  - enabled: 1
+    path: Assets/Scenes/EasyLevels/EasyLevel 3/EasyLevel 3.unity
+    guid: 4bb952ed418f93f41ac69091bdefef56
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4a013a57899aedd42b83486152791040,
       type: 2}

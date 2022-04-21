@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4924683109167740373}
   - component: {fileID: 8356471608885394032}
   - component: {fileID: 6060950021708238522}
-  - component: {fileID: 4890139878231265852}
+  - component: {fileID: 2725100380975788516}
   m_Layer: 0
   m_Name: Street Tree 4
   m_TagString: Untagged
@@ -28,7 +28,8 @@ Transform:
   m_GameObject: {fileID: 5700481387186843503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,6 +53,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -82,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4890139878231265852
-BoxCollider:
+--- !u!64 &2725100380975788516
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,6 +94,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.042840905, y: 0.047455955, z: 0.10271085}
-  m_Center: {x: 0.00055580866, y: 0, z: 0.051208336}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2488585167438335715, guid: ab703e35c4b7808479708aec5fd060b6, type: 3}
